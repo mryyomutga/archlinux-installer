@@ -35,7 +35,7 @@ timedatectl set-ntp true
 
 # Create partitions
 sgdisk -Z /dev/$block_device
-sgdisk -n 0::+512M -t 0:EF00 -c 0:'EFI System' /dev/$block_device
+sgdisk -n 0::+100M -t 0:EF00 -c 0:'EFI System' /dev/$block_device
 sgdisk -n 0::: -t 0:8E00 -c 0:'Linux LVM' /dev/$block_device
 sgdisk -p /dev/$block_device
 
